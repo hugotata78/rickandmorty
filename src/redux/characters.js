@@ -1,4 +1,4 @@
-import axios from "axios";
+//import axios from "axios";
 import { updateFavs, getFavs } from "../config";
 import ApolloClient, {gql} from 'apollo-boost'
 
@@ -15,7 +15,7 @@ const initialState = {
 const GET_CHARACTERS = "GET_CHARACTERS";
 const GET_CHARACTERS_SUCCESS = "GET_CHARACTERS_SUCCESS";
 const GET_CHARACTERS_FAILED = "GET_CHARACTERS_FAILED";
-const URL = "https://rickandmortyapi.com/api/character";
+//const URL = "https://rickandmortyapi.com/api/character";
 const client = new ApolloClient({
   uri:"https://rickandmortyapi.com/graphql"
 })

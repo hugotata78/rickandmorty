@@ -3,7 +3,7 @@ import styles from './favs.module.css'
 import Card from '../card/Card'
 import { connect } from 'react-redux'
 
- function FavPage({ characters = [0] }) {
+function FavPage({ characters = [0] }) {
     function renderCharacter(char, i) {
         return (
             <Card hide {...char} key={i} />
@@ -18,8 +18,8 @@ import { connect } from 'react-redux'
     )
 }
 
-function mapStateToProps({characters}){
-    return{
+function mapStateToProps({ characters }) {
+    return {
         characters: characters.favorites
     }
 }
