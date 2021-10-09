@@ -1,11 +1,14 @@
 .container{
     width: 100%;
+    margin: 100px auto;
+    
+}
+.container div{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
 .container button{
     padding: 20px 50px;
     border: none;

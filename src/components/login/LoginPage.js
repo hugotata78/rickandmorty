@@ -2,10 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import styles from "./login.module.css";
 import { loginActions,logOutActions } from "../../redux/users";
+import { useHistory } from "react-router";
 
 function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
+
+  const history = useHistory()
   function login() {
     loginActions();
+    history.push('/')
   }
 
   function logOut(){
@@ -17,7 +21,7 @@ function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
         <div>
           <h1>Inicia Sesión con Google</h1>
 
-          <button onClick={login}>Iniciar</button>
+          <button onClick={login}>Iniciar Sesión</button>
         </div>
       ) : (
         <div>
