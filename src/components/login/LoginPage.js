@@ -18,7 +18,7 @@ function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
   return (
     <div className={styles.container}>
       {!loggedIn ? (
-        <div>
+        <div >
           <h1>Inicia Sesión con Google</h1>
 
           <button onClick={login}>Iniciar Sesión</button>
