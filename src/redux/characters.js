@@ -26,6 +26,7 @@ const GET_FAVS_SUCCESS = "GET_FAVS_SUCCESS";
 const GET_FAVS_FAILED = "GET_FAVS_FAILED";
 const UPDATE_PAGE = 'UPDATE_PAGE'
 
+
 //reducer
 const charactersReducers = (state = initialState, action) => {
   switch (action.type) {
@@ -62,7 +63,7 @@ const addToFavoritesActions = () => (dispatch, getState) => {
   const { arrCharacters, favorites } = getState().characters;
   const { uid } = getState().users;
   const char = arrCharacters.shift();
-  favorites.push(char);
+  favorites.push(char)  
   updateFavs(favorites, uid);
   dispatch({
     type: ADD_TO_FAVORITES,

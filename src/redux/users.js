@@ -51,7 +51,7 @@ function saveStorage(storage) {
 
 //actions
 
-const logOutActions = () => (dispatch, geteState) => {
+const logOutActions = () => (dispatch, getState) => {
   signOutGoogle();
   dispatch({
     type: LOG_OUT,
