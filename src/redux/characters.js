@@ -58,6 +58,14 @@ const charactersReducers = (state = initialState, action) => {
       return state;
   }
 };
+
+//funcion auxiliar
+
+const saveStorage=(name, storage) => {
+  storage = JSON.stringify(storage);
+  localStorage.setItem(name, storage);
+}
+
 //actions
 const addToFavoritesActions = () => (dispatch, getState) => {
   const { arrCharacters, favorites } = getState().characters;
@@ -98,6 +106,7 @@ const getFavoritesActions = () => (dispatch, getState) => {
         type: GET_FAVS_SUCCESS,
         payload: [...arr],
       });
+      saveStorage('favs',[...arr])
     })
     .catch((e) => {
       dispatch({
@@ -107,6 +116,17 @@ const getFavoritesActions = () => (dispatch, getState) => {
     });
 };
 
+export const restoreFavsAction = () => dispatch => {
+  let favs = localStorage.getItem('favs');
+  favs = JSON.parse(favs);
+  if (favs && favs.length > 0) {
+      dispatch({
+          type: GET_FAVS_SUCCESS,
+          payload: favs
+      })
+  }
+  console.log(favs)
+}
 const getCharactersActions = () => (dispatch, getState) => {
   let query = gql`
     query ($page:Int){

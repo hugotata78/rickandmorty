@@ -1,6 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import { usersReducer, restoreSession } from "./users";
-import { charactersReducers, getCharactersActions } from './characters'
+import { charactersReducers, getCharactersActions, restoreFavsAction } from './characters'
 import thunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,6 +17,7 @@ const generateStore = () => {
 
   getCharactersActions()(store.dispatch,store.getState)
   restoreSession()(store.dispatch)
+  restoreFavsAction()(store.dispatch)
   return store;
 };
 

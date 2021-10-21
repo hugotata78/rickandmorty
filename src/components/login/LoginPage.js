@@ -4,7 +4,7 @@ import styles from "./login.module.css";
 import { loginActions,logOutActions } from "../../redux/users";
 import { useHistory } from "react-router";
 
-function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
+function LoginPage({ loading, loggedIn, displayName, loginActions, logOutActions }) {
 
   const history = useHistory()
   function login() {
@@ -20,12 +20,11 @@ function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
       {!loggedIn ? (
         <div >
           <h1>Inicia Sesión con Google</h1>
-
           <button onClick={login}>Iniciar Sesión</button>
         </div>
       ) : (
         <div>
-          <h1>Cierra tu sesión</h1>
+          <h1>Bienvenido {displayName}</h1>
           <button onClick={logOut}>Cerrar Sesión</button>
         </div>
       )}
@@ -33,10 +32,11 @@ function LoginPage({ loading, loggedIn, loginActions, logOutActions }) {
   );
 }
 
-function mapStateToProps({ users: { loading, loggedIn } }) {
+function mapStateToProps({ users: { loading, loggedIn, displayName } }) {
   return {
     loading,
     loggedIn,
+    displayName
   };
 }
 export default connect(mapStateToProps, { loginActions, logOutActions })(LoginPage);
