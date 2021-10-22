@@ -1,4 +1,3 @@
-//import axios from "axios";
 import { updateFavs, getFavs } from "../config";
 import ApolloClient, {gql} from 'apollo-boost'
 

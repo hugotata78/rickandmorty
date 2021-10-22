@@ -57,6 +57,7 @@ const logOutActions = () => (dispatch, getState) => {
     type: LOG_OUT,
   });
   localStorage.removeItem("storage");
+  localStorage.removeItem("favs");
 };
 
 const restoreSession = () => (dispatch) => {

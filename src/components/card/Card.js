@@ -3,6 +3,7 @@ import styles from './card.module.css'
 import FontAwesome from 'react-fontawesome'
 import PropTypes from 'prop-types'
 
+
 //let rick = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
 
 function onClick(side) {
